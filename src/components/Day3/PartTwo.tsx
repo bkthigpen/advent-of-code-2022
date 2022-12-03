@@ -22,10 +22,12 @@ const divideCompartments = (input: string) => {
   return builderArray;
 };
 
-const generatePriorityItem = divideCompartments(puzzleInput).map((priority) => {
-  const commonCharacter = commonCharacters(priority);
-  return createPriorityItem(commonCharacter)[0];
-});
+const generatePriorityItem: number[] = divideCompartments(puzzleInput).map(
+  (priority) => {
+    const commonCharacter = commonCharacters(priority);
+    return createPriorityItem(commonCharacter)[0];
+  }
+);
 
 const PartTwo = () => {
   const generatePriorityItemTotal = generatePriorityItem.reduce(

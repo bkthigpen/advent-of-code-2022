@@ -1,6 +1,6 @@
 import puzzleInput from '@data/day3/puzzleInput';
-
-import { assignLetterValues } from '@utils/day3';
+import { commonCharacters } from '@utils/index';
+import { assignLetterValues, createPriorityItem } from '@utils/day3';
 
 const divideCompartments = (compartments: string): string[][] => {
   return compartments.split('\n').map((compartment) => {
@@ -13,38 +13,25 @@ const divideCompartments = (compartments: string): string[][] => {
   });
 };
 
-const commonItemType = (compartments: string[][]): string[] => {
-  const commonType = compartments.map((type) => {
-    const compartmentOne = new Set(type[0]);
-    const commonType = [...new Set(type[1])].filter((char) =>
-      compartmentOne.has(char)
-    )[0];
-    return commonType;
-  });
+const generatePriorityItem: number[] = divideCompartments(puzzleInput).map(
+  (priority) => {
+    const commonCharacter = commonCharacters(priority);
+    return createPriorityItem(commonCharacter)[0];
+  }
+);
 
-  return commonType;
-};
-
-const generatePriorityItemTotal = (): number => {
-  const letterValues = assignLetterValues();
-  const createPriorityItem = (priorityItem: string[]): number[] =>
-    priorityItem.map((item) => letterValues[item]);
-
-  const dividedCompartments = divideCompartments(puzzleInput);
-
-  const commonItem = commonItemType(dividedCompartments);
-  const totalPriorityItem = createPriorityItem(commonItem).reduce(
+const PartOne = (): JSX.Element => {
+  const generatePriorityItemTotal = generatePriorityItem.reduce(
     (acc, curr) => acc + curr,
     0
   );
 
-  // answer 7821
-  return totalPriorityItem;
-};
-
-const PartOne = () => {
-  const initPriorityItemTotal = generatePriorityItemTotal();
-  return <div>{initPriorityItemTotal}</div>;
+  return (
+    <div>
+      {/* Answer - 7821 */}
+      {generatePriorityItemTotal}
+    </div>
+  );
 };
 
 export default PartOne;
