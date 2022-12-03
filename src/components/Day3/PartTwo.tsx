@@ -29,7 +29,7 @@ const generatePriorityItem: number[] = divideCompartments(puzzleInput).map(
   }
 );
 
-const PartTwo = () => {
+const PartTwo = (): JSX.Element => {
   const generatePriorityItemTotal = generatePriorityItem.reduce(
     (acc, curr) => acc + curr,
     0
