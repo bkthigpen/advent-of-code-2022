@@ -2,7 +2,7 @@ import puzzleInput from '@data/day3/puzzleInput';
 import { commonCharacters } from '@utils/index';
 import { createPriorityItem } from '@utils/day3';
 
-const divideCompartments = (input: string) => {
+const divideCompartments = (input: string): string[][] => {
   const dividedCount = input.split('\n');
   let trueIndex = 0;
   const builderArray = [];
