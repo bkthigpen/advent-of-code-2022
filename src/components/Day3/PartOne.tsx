@@ -1,6 +1,6 @@
 import puzzleInput from '@data/day3/puzzleInput';
 import { commonCharacters } from '@utils/index';
-import { assignLetterValues, createPriorityItem } from '@utils/day3';
+import { createPriorityItem } from '@utils/day3';
 
 const divideCompartments = (compartments: string): string[][] => {
   return compartments.split('\n').map((compartment) => {
