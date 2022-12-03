@@ -1,4 +1,4 @@
-import puzzleInput from "@data/puzzleInput";
+import puzzleInput from "@data/day1/puzzleInput";
 import totalCaloriesPerElf from "@utils/totalCaloriesPerElf";
 
 const Day1 = (): JSX.Element => {
