@@ -9,3 +9,8 @@ export const assignLetterValues = (): LettersType => {
 
   return letterObj;
 }
+
+export const createPriorityItem = (priorityItem: string[]): number[] => {
+  const letterValues = assignLetterValues();
+  return priorityItem.map((item) => letterValues[item])
+};

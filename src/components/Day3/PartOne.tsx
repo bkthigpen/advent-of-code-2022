@@ -7,13 +7,13 @@ const divideCompartments = (compartments: string): string[][] => {
     const firstHalf = compartment.slice(0, compartment.length / 2);
     const secondHalf = compartment.slice(compartment.length / 2, compartment.length);
     return [firstHalf, secondHalf];
-  })
+  });
 };
 
 const commonItemType = (compartments: string[][]): string[] => {
   const commonType = compartments.map((type) => {
     const compartmentOne = new Set(type[0]);
-    const commonType = [...new Set(type[1])].filter((char) =>compartmentOne.has(char))[0];
+    const commonType = [...new Set(type[1])].filter((char) => compartmentOne.has(char))[0];
     return commonType;
   }); 
 
