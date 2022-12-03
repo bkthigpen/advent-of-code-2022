@@ -1,6 +1,6 @@
 import puzzleInput from "@data/day2/puzzleInput";
 import { GameOptionsType, GameResultsType, OpponentType, PlayerType} from '@customTypes/Day2';
-import { handShapePoints, roundPoints} from '@utils/Day2';
+import { handShapePoints, roundPoints} from '@utils/day2';
 
 type PuzzleInputType = OpponentType | PlayerType;
 type HandShapeCipherType = {

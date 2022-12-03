@@ -1,10 +1,6 @@
 import puzzleInput from "@data/day3/puzzleInput";
 
-type LettersType = {
-  [T in string]: number
-}
-
-const lowerCaseLetters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+import { assignLetterValues } from "@utils/day3";
 
 const divideCompartments = (compartments: string): string[][] => {
   return compartments.split('\n').map((compartment) => {
@@ -13,15 +9,6 @@ const divideCompartments = (compartments: string): string[][] => {
     return [firstHalf, secondHalf];
   })
 };
-
-const assignLetterValues = (letter: string): LettersType => {
-  const letterObj: LettersType = {};
-  for (let i = 0; i < 52; i += 1) {
-    letterObj[letter[i]] = i + 1;
-  }
-
-  return letterObj;
-}
 
 const commonItemType = (compartments: string[][]): string[] => {
   const commonType = compartments.map((type) => {
@@ -34,7 +21,7 @@ const commonItemType = (compartments: string[][]): string[] => {
 };
 
 const generatePriorityItemTotal = (): number => {
-  const letterValues = assignLetterValues(lowerCaseLetters);
+  const letterValues = assignLetterValues();
   const createPriorityItem = (priorityItem: string[]): number[] => priorityItem.map((item) => letterValues[item]);
 
   const dividedCompartments = divideCompartments(puzzleInput)
