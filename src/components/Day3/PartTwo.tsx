@@ -17,8 +17,6 @@ const divideCompartments = (input: string): string[][] => {
     }
   }
 
-  console.log('builderArray', builderArray);
-
   return builderArray;
 };
 
