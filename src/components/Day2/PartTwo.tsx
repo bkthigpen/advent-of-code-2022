@@ -1,6 +1,11 @@
-import puzzleInput from "@data/day2/puzzleInput";
-import { GameOptionsType, GameResultsType, OpponentType, PlayerType} from '@customTypes/Day2';
-import { handShapePoints, roundPoints} from '@utils/day2';
+import puzzleInput from '@data/day2/puzzleInput';
+import {
+  GameOptionsType,
+  GameResultsType,
+  OpponentType,
+  PlayerType,
+} from '@customTypes/Day2';
+import { handShapePoints, roundPoints } from '@utils/day2';
 
 type OpponentCipherType = {
   [T in OpponentType]: GameOptionsType;
@@ -22,7 +27,10 @@ const playerCipher: PlayerCipherType = {
   Z: 'win',
 };
 
-const determineHandSign = (opponent: GameOptionsType, playerOutcome: GameResultsType): GameOptionsType => {
+const determineHandSign = (
+  opponent: GameOptionsType,
+  playerOutcome: GameResultsType
+): GameOptionsType => {
   if (playerOutcome === 'lose') {
     if (opponent === 'paper') return 'rock';
     if (opponent === 'rock') return 'scissors';
@@ -60,7 +68,10 @@ const generatePlayerTotalPoints = puzzleInput.split('\n').map((game) => {
   return playerPoints + playerRoundPoints;
 });
 
-const addPlayerTotalPoints = generatePlayerTotalPoints.reduce((acc, curr) => acc + curr, 0);
+const addPlayerTotalPoints = generatePlayerTotalPoints.reduce(
+  (acc, curr) => acc + curr,
+  0
+);
 
 const PartTwo = () => <div>{addPlayerTotalPoints}</div>;
 

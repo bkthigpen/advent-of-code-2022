@@ -1,4 +1,4 @@
-import { GameOptionsType, GameResultsType } from "@customTypes/Day2";
+import { GameOptionsType, GameResultsType } from '@customTypes/Day2';
 
 export const handShapePoints = (result: GameOptionsType): number => {
   if (result === 'rock') return 1;

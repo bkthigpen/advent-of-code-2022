@@ -3,7 +3,7 @@ export const commonCharacters = (array: string[]): string[] => {
   for (let i = 1; i < array.length; i++) {
     result = [...new Set(result)].filter((res) => {
       const l = array[i].length;
-      array[i] = array[i].replace(res, "");
+      array[i] = array[i].replace(res, '');
       return l > array[i].length;
     });
   }

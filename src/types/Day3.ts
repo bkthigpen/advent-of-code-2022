@@ -1,3 +1,3 @@
 export type LettersType = {
-  [T in string]: number
-}
+  [T in string]: number;
+};

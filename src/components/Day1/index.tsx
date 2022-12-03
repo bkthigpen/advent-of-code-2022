@@ -1,16 +1,17 @@
-import puzzleInput from "@data/day1/puzzleInput";
-import totalCaloriesPerElf from "@utils/day1";
+import puzzleInput from '@data/day1/puzzleInput';
+import totalCaloriesPerElf from '@utils/day1';
 
 const Day1 = (): JSX.Element => {
+  const initCaloriesPerElf = totalCaloriesPerElf(puzzleInput);
 
-const initCaloriesPerElf = totalCaloriesPerElf(puzzleInput);
+  // part one solution
+  const mostCalories = Math.max(...initCaloriesPerElf);
 
-// part one solution
-const mostCalories = Math.max(...initCaloriesPerElf);
-
-// part two solution
-const caloriesDescending = initCaloriesPerElf.sort((a, b) => b - a);
-const topThreeTotal = caloriesDescending.slice(0, 3).reduce((acc, curr) => acc + curr, 0);
+  // part two solution
+  const caloriesDescending = initCaloriesPerElf.sort((a, b) => b - a);
+  const topThreeTotal = caloriesDescending
+    .slice(0, 3)
+    .reduce((acc, curr) => acc + curr, 0);
 
   return (
     <div>

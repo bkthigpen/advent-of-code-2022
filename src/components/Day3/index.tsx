@@ -1,5 +1,5 @@
-import PartOne from "./PartOne";
-import PartTwo from "./PartTwo";
+import PartOne from './PartOne';
+import PartTwo from './PartTwo';
 
 const Day3 = (): JSX.Element => {
   return (

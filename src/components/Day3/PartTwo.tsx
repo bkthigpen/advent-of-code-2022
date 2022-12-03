@@ -1,6 +1,6 @@
-import puzzleInput from "@data/day3/puzzleInput";
-import { commonCharacters } from "@utils/index";
-import { createPriorityItem } from "@utils/day3";
+import puzzleInput from '@data/day3/puzzleInput';
+import { commonCharacters } from '@utils/index';
+import { createPriorityItem } from '@utils/day3';
 
 const divideCompartments = (input: string) => {
   const dividedCount = input.split('\n');
@@ -9,14 +9,18 @@ const divideCompartments = (input: string) => {
 
   for (let i = 0; i < dividedCount.length; i += 1) {
     if (i % 3 === 0) {
-      const newArray = [dividedCount[i], dividedCount[i + 1], dividedCount[i + 2]];
+      const newArray = [
+        dividedCount[i],
+        dividedCount[i + 1],
+        dividedCount[i + 2],
+      ];
       builderArray.push(newArray);
-      trueIndex += 1
+      trueIndex += 1;
     }
   }
 
   return builderArray;
-}
+};
 
 const generatePriorityItem = divideCompartments(puzzleInput).map((priority) => {
   const commonCharacter = commonCharacters(priority);
@@ -24,7 +28,10 @@ const generatePriorityItem = divideCompartments(puzzleInput).map((priority) => {
 });
 
 const PartTwo = () => {
-  const generatePriorityItemTotal = generatePriorityItem.reduce((acc, curr) => acc + curr, 0);
+  const generatePriorityItemTotal = generatePriorityItem.reduce(
+    (acc, curr) => acc + curr,
+    0
+  );
   return (
     <div>
       {/* Answer - 2752 */}
