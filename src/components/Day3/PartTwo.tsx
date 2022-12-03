@@ -4,7 +4,6 @@ import { createPriorityItem } from '@utils/day3';
 
 const divideCompartments = (input: string): string[][] => {
   const dividedCount = input.split('\n');
-  let trueIndex = 0;
   const builderArray = [];
 
   for (let i = 0; i < dividedCount.length; i += 1) {
@@ -15,9 +14,10 @@ const divideCompartments = (input: string): string[][] => {
         dividedCount[i + 2],
       ];
       builderArray.push(newArray);
-      trueIndex += 1;
     }
   }
+
+  console.log('builderArray', builderArray);
 
   return builderArray;
 };
