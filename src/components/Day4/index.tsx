@@ -1,5 +1,5 @@
 import PartOne from './PartOne';
-// import PartTwo from './PartTwo';
+import PartTwo from './PartTwo';
 
 const Day4 = () => {
   return (
@@ -7,8 +7,8 @@ const Day4 = () => {
       <h1>Day 4</h1>
       <h2>Part One Answer</h2>
       <PartOne />
-      {/* <h2>Part Two Answer</h2>
-      <PartTwo /> */}
+      <h2>Part Two Answer</h2>
+      <PartTwo />
     </div>
   );
 };
