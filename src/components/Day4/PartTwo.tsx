@@ -1,7 +1,7 @@
 import puzzleInput from '@data/day4/puzzleInput';
 import { splitPuzzle } from '@utils/day4';
 
-const PartOne = () => {
+const PartOne = (): JSX.Element => {
   const determineWorkOverlap = splitPuzzle(puzzleInput).map((puzzle) => {
     const firstElf = puzzle[0].split('-').map((elf) => parseInt(elf));
     const secondElf = puzzle[1].split('-').map((elf) => parseInt(elf));
