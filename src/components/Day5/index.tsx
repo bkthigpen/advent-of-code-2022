@@ -10,7 +10,7 @@ const Day5 = () => {
       {/* <h2>Part Two Answer</h2> */}
       {/* <PartTwo /> */}
     </div>
-  )
+  );
 };
 
 export default Day5;
