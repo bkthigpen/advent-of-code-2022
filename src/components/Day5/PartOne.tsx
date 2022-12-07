@@ -28,7 +28,7 @@ const PartOne = () => {
   // console.log('crateRows', crateRows);
   // console.log('hardcodedInput', hardcodedInput);
 
-  console.log('Raw instructions', rawInstructions);
+  // console.log('Raw instructions', rawInstructions);
 
   const instructions = rawInstructions.map((instruct) => {
     // console.log('instruct', instruct);
